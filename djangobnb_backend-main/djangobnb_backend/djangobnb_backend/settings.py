@@ -109,15 +109,11 @@ INSTALLED_APPS = [
 
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
     'django.contrib.sites',  # Required by allauth
 
     'dj_rest_auth',
     'dj_rest_auth.registration',
-    
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    # ...
 
     'corsheaders',
 
@@ -125,6 +121,7 @@ INSTALLED_APPS = [
     'property',
     'useraccount',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -135,6 +132,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'djangobnb_backend.urls'
